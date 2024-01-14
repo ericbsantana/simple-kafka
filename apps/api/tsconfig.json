@@ -1,0 +1,8 @@
+{
+  "extends": "@simple-kafka/typescript-config/base.json",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "outDir": "dist/"
+  }
+}
