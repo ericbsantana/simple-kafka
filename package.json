@@ -1,6 +1,5 @@
 {
   "name": "simple-kafka-monorepo",
-  "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
