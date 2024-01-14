@@ -4,5 +4,8 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.4"
   }
 }

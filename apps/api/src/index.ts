@@ -1,17 +1,19 @@
-import express from "express";
+import { Server } from "socket.io";
 
-import { Router, Request, Response } from "express";
+const io = new Server(2999, { cors: { allowedHeaders: "*", origin: "*" } });
 
-const app = express();
+io.on("connection", (socket) => {
+  let username = `User ${Math.round(Math.random() * 999999)}`;
+  socket.emit("name", username);
 
-const route = Router();
-
-app.use(express.json());
-
-route.get("/", (req: Request, res: Response) => {
-  res.json({ message: "hihi" });
+  socket.on("message", (message) => {
+    console.log(message);
+    io.emit("message", {
+      from: username,
+      message: message,
+      time: new Date().toLocaleString(),
+    });
+  });
 });
 
-app.use(route);
-
-app.listen(3333, () => console.log("Running on port 3333"));
+io.listen(3000);
