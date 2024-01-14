@@ -1,0 +1,10 @@
+{
+  "name": "simple-kafka",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eric Santana <bitencourteric@hotmail.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
