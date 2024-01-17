@@ -6,15 +6,15 @@ const initializeProducer = async () => {
   await producer.connect();
 };
 
-const sendMessage = async (message: string) => {
-  await producer.send({
-    topic: "chat",
-    messages: [{ value: message }],
-  });
-};
+// const sendMessage = async (message: string) => {
+//   await producer.send({
+//     topic: "chat",
+//     messages: [{ value: message }],
+//   });
+// };
 
-const disconnect = async () => {
-  await producer.disconnect();
-};
+// const disconnect = async () => {
+//   await producer.disconnect();
+// };
 
-export { initializeProducer, sendMessage, disconnect };
+export { producer, initializeProducer };
